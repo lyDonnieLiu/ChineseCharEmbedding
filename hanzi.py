@@ -7,9 +7,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 font = ImageFont.truetype('simkai.ttf', size=40)
-img = Image.new('RGB',(40,40),(255,255,255))
+img = Image.new('RGB', (40, 40), (255, 255, 255))
 draw = ImageDraw.Draw(img)
-draw.text((0, 0), u'耄', (0,0,0),font=font)
+draw.text((0, 0), u'耄', (0, 0, 0), font=font)
 #draw.text((0,60),unicode('你好','utf-8'),(0,0,0),font=font)
 
 img.show()
@@ -31,12 +31,12 @@ def ImageToMatrix(filename):
     im = Image.open(filename)
     # 显示图片
 #     im.show()  
-    width,height = im.size
+    width, height = im.size
     im = im.convert("L")
     im = im.point(binaryzation(145), '1')
     data = im.getdata()
     data = np.matrix(data)//255
-    new_data = np.reshape(data,(height,width))
+    new_data = np.reshape(data, (height, width))
     return new_data
 #     new_im = Image.fromarray(new_data)
 #     # 显示图片
