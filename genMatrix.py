@@ -36,6 +36,7 @@ def ReadVocab(vocabulary_file, hanstart, hanend, char2id_file, id2char_file):
     with open(id2char_file, 'wb') as f:
         pickle.dump(id2char, f)
 
+<<<<<<< HEAD
 def Convert2Pic(char, picName):
     #font = ImageFont.truetype('simkai.ttf', size = 40)
     # for MacOs 
@@ -58,6 +59,9 @@ def ImageToMatrix(filename):
     data = np.matrix(data)//255
     new_data = np.reshape(data, (height, width))
     return new_data
+=======
+
+>>>>>>> 7053f3bcb7d89d1d2051e3751ba7548716a5b3a2
 
 def CharMatrix(hanstart, hanend, id2char_file, outputfile, charid2idx_file):
     """
@@ -116,9 +120,19 @@ with open('char2id_file.txt', 'rb') as f:
 with open('charid2idx_file.txt', 'rb') as f:
     charid2idx = pickle.load(f)
 
+<<<<<<< HEAD
 imgdata = np.load('img_data.npy')
 for charid in range(hanstart, hanend+1):
     idx = charid2idx[charid]
     d = imgdata[idx]
     im = MatrixToImage(d)
     im.show()
+=======
+ch = u'医'
+charid = char2id[ch]
+idx = charid2idx[charid]
+imgdata = np.load('img_data.npy')
+d = imgdata[idx]
+im = MatrixToImage(d)
+im.show()
+>>>>>>> 7053f3bcb7d89d1d2051e3751ba7548716a5b3a2
