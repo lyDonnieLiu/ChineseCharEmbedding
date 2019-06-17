@@ -6,11 +6,18 @@ import numpy as np
 # import scipy
 import matplotlib.pyplot as plt
 
+<<<<<<< HEAD
 font = ImageFont.truetype('Songti.ttc', size=32)
 img = Image.new('RGB', (40, 40), (255, 255, 255))
 draw = ImageDraw.Draw(img)
 c = '一'
 draw.text((0, 0), c, (0, 0, 0), font=font)
+=======
+font = ImageFont.truetype('simkai.ttf', size=40)
+img = Image.new('RGB', (40, 40), (255, 255, 255))
+draw = ImageDraw.Draw(img)
+draw.text((0, 0), u'耄', (0, 0, 0), font=font)
+>>>>>>> 7053f3bcb7d89d1d2051e3751ba7548716a5b3a2
 #draw.text((0,60),unicode('你好','utf-8'),(0,0,0),font=font)
 
 img.show()
