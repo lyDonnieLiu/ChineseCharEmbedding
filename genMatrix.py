@@ -36,6 +36,7 @@ def ReadVocab(vocabulary_file, hanstart, hanend, char2id_file, id2char_file):
     with open(id2char_file, 'wb') as f:
         pickle.dump(id2char, f)
 
+
 def Convert2Pic(char, picName):
     #font = ImageFont.truetype('simkai.ttf', size = 40)
     # for MacOs 
