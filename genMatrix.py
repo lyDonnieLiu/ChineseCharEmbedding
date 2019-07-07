@@ -36,17 +36,6 @@ def ReadVocab(vocabulary_file, hanstart, hanend, char2id_file, id2char_file):
     with open(id2char_file, 'wb') as f:
         pickle.dump(id2char, f)
 
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> fd01a9614d4e52d2b3d166e003b6c8bc448fa362
->>>>>>> 79326838d50c303221a0267361b6d9b4ad65c7a2
->>>>>>> dd58c18b180aceb36d6c28a5ce336661d569ded6
 def Convert2Pic(char, picName):
     #font = ImageFont.truetype('simkai.ttf', size = 40)
     # for MacOs 
@@ -105,8 +94,8 @@ def CharMatrix(hanstart, hanend, id2char_file, outputfile, charid2idx_file):
     m = np.array(result)
     np.save(outputfile, m)
 
-hanstart = 8083# 671
-hanend = 8090 # 8102
+hanstart = 8098# 671
+hanend = 8102 # 8102
 # ReadVocab('vocab.txt',hanstart, hanend,'char2id_file.txt','id2char_file.txt')
 # CharMatrix(hanstart, hanend,'id2char_file.txt','img_data.npy', 'charid2idx_file.txt')
 
