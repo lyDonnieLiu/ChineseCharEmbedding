@@ -110,15 +110,15 @@ def MatrixToImage(data):
     return new_im
 
 
-with open('char2id_file.txt', 'rb') as f:
-    char2id = pickle.load(f)
+# with open('char2id_file.txt', 'rb') as f:
+#     char2id = pickle.load(f)
 
-with open('charid2idx_file.txt', 'rb') as f:
-    charid2idx = pickle.load(f)
+# with open('charid2idx_file.txt', 'rb') as f:
+#     charid2idx = pickle.load(f)
 
-imgdata = np.load('img_data.npy')
-for charid in range(hanstart, hanend+1):
-    idx = charid2idx[charid]
-    d = imgdata[idx]
-    im = MatrixToImage(d)
-    im.show()
+# imgdata = np.load('img_data.npy')
+# for charid in range(hanstart, hanend+1):
+#     idx = charid2idx[charid]
+#     d = imgdata[idx]
+#     im = MatrixToImage(d)
+#     im.show()
