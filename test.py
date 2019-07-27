@@ -14,8 +14,14 @@ import pickle
 # plt.imshow(img[3][:, :, 0])
 # plt.show()
 
+# normalization or standardization
+#  
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
 
-with open("char2id_file.txt", 'rb') as f:
-    char2id = pickle.load(f)
+vec = np.load("latent_vec.npy")
+s_scaler = MinMaxScaler(feature_range=(-1,1))
+#s_scaler = StandardScaler()
+standard_vec = s_scaler.fit_transform(vec)
 
-print(len(char2id))
+print(standard_vec)
+print(np.max(standard_vec), np.min(standard_vec))

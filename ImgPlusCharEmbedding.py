@@ -9,6 +9,7 @@ import keras
 import csv
 import numpy as np
 import pickle
+from sklearn.preprocessing import MinMaxScaler
 
 classes = 2
 maxlen = 50
@@ -27,8 +28,11 @@ def read_tsv(input_file, quotechar=None):
         for line in reader:
             lines.append(line)
         return lines
-
+#load image feature and normalize into [-1, 1]
 img_feature = np.load("latent_vec.npy")
+s_scaler = MinMaxScaler(feature_range=(-1,1))
+standard_img_feature = s_scaler.fit_transform(img_feature)
+
 with open("char2id_file.txt", 'rb') as f:
     char2id = pickle.load(f)
 
@@ -49,7 +53,7 @@ def char_embedding(input_file, max_word=50, classes=2):
             for i, c in enumerate(r[0]):
                 if c in char2id.keys():
                     id = char2id[c] - 671               
-                    r[1][i] = np.sum([img_feature[id], r[1][i]], axis=0)
+                    r[1][i] = np.sum([standard_img_feature[id], r[1][i]], axis=0)/2
 
         temp = r[1]
         l = len(r[1])
